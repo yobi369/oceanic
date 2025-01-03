@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kiwi Oceanic Group Volunteer Application Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,23 +15,32 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         h1 {
             color: #0077be;
         }
+
         label {
             display: block;
             margin: 10px 0 5px;
         }
-        input[type="text"], input[type="email"], input[type="tel"], input[type="file"], select {
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="file"],
+        select {
             width: 100%;
             padding: 8px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
+
         input[type="checkbox"] {
             margin-right: 10px;
         }
+
         textarea {
             width: 100%;
             height: 100px;
@@ -38,6 +49,7 @@
             border-radius: 4px;
             margin-bottom: 10px;
         }
+
         button {
             background-color: #0077be;
             color: white;
@@ -46,76 +58,100 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #005f8d;
         }
     </style>
 </head>
+
 <body>
 
-<h1>🌊 Kiwi Oceanic Group Volunteer Application Form 🌊</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="/">Kiwi Oceanic Group</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/news">News & Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/support">Support Center</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/team">Our Team</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<form action="/volunteer" method="POST" enctype="multipart/form-data">
+    <h1>🌊 Kiwi Oceanic Group Volunteer Application Form 🌊</h1>
 
-    <h2>Contact Information</h2>
-    <label for="fullName">Full Name:</label>
-    <input type="text" id="fullName" name="fullName" required>
+    <form action="/volunteer" method="POST" enctype="multipart/form-data">
 
-    <label for="email">Email Address:</label>
-    <input type="email" id="email" name="email" required>
+        <h2>Contact Information</h2>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
 
-    <label for="phone">Phone Number:</label>
-    <input type="tel" id="phone" name="phone" required>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
 
-    <label for="address">Address:</label>
-    <input type="text" id="address" name="address" required>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
 
-    <label for="city">City:</label>
-    <input type="text" id="city" name="city" required>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
 
-    <label for="state">State/Province:</label>
-    <input type="text" id="state" name="state" required>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
 
-    <label for="postalCode">Postal Code:</label>
-    <input type="text" id="postalCode" name="postalCode" required>
+        <label for="state">State/Province:</label>
+        <input type="text" id="state" name="state" required>
 
-    <label for="country">Country:</label>
-    <input type="text" id="country" name="country" required>
+        <label for="postalCode">Postal Code:</label>
+        <input type="text" id="postalCode" name="postalCode" required>
 
-    <h2>Preferred Communication Channel</h2>
-    <label><input type="checkbox" name="communicationChannel" value="Email"> Email</label>
-    <label><input type="checkbox" name="communicationChannel" value="Phone"> Phone</label>
-    <label><input type="checkbox" name="communicationChannel" value="Text"> Text Message</label>
-    <label><input type="checkbox" name="communicationChannel" value="Other"> Other (please specify): <input type="text" name="otherCommunication"></label>
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required>
 
-    <h2>Preferred Languages Spoken</h2>
-    <label><input type="checkbox" name="languages" value="English"> English</label>
-    <label><input type="checkbox" name="languages" value="Spanish"> Spanish</label>
-    <label><input type="checkbox" name="languages" value="French"> French</label>
-    <label><input type="checkbox" name="languages" value="Other"> Other (please specify): <input type="text" name="otherLanguage"></label>
+        <h2>Preferred Communication Channel</h2>
+        <label><input type="checkbox" name="communication Channel" value="Email"> Email</label>
+        <label><input type="checkbox" name="communicationChannel" value="Phone"> Phone</label>
+        <label><input type="checkbox" name="communicationChannel" value="Text"> Text Message</label>
+        <label><input type="checkbox" name="communicationChannel" value="Other"> Other (please specify): <input type="text" name="otherCommunication"></label>
 
-    <h2>Areas of Interest</h2>
-    <label><input type="checkbox" name="interest" value="Marine Conservation"> Marine Conservation</label>
-    <label><input type="checkbox" name="interest" value="Community Outreach"> Community Outreach</label>
-    <label><input type="checkbox" name="interest" value="Fundraising Events"> Fundraising Events</label>
-    <label><input type="checkbox" name="interest" value="Educational Programs"> Educational Programs</label>
-    <label><input type="checkbox" name="interest" value="Other"> Other (please specify): <input type="text" name="otherInterest"></label>
+        <h2>Preferred Languages Spoken</h2>
+        <label><input type="checkbox" name="languages" value="English"> English</label>
+        <label><input type="checkbox" name="languages" value="Spanish"> Spanish</label>
+        <label><input type="checkbox" name="languages" value="French"> French</label>
+        <label><input type="checkbox" name="languages" value="Other"> Other (please specify): <input type="text" name="otherLanguage"></label>
 
-    <h2>Availability</h2>
-    <label for="availability">Please specify your availability (days and times):</label>
-    <textarea id="availability" name="availability" required></textarea>
+        <h2>Areas of Interest</h2>
+        <label><input type="checkbox" name="interest" value="Marine Conservation"> Marine Conservation</label>
+        <label><input type="checkbox" name="interest" value="Community Outreach"> Community Outreach</label>
+        <label><input type="checkbox" name="interest" value="Fundraising Events"> Fundraising Events</label>
+        <label><input type="checkbox" name="interest" value="Educational Programs"> Educational Programs</label>
+        <label><input type="checkbox" name="interest" value="Other"> Other (please specify): <input type="text" name="otherInterest"></label>
 
-    <h2>Upload Your Resume</h2>
-    <label for="resume">Resume (PDF or Word format):</label>
-    <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx" required>
+        <h2>Availability</h2>
+        <label for="availability">Please specify your availability (days and times):</label>
+        <textarea id="availability" name="availability" required></textarea>
 
-    <h2>Additional Information</h2>
-    <label for="additionalInfo">Please provide any additional information or comments:</label>
-    <textarea id="additionalInfo" name="additionalInfo"></textarea>
+        <h2>Upload Your Resume</h2>
+        <label for="resume">Resume (PDF or Word format):</label>
+        <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx" required>
 
-    <button type="submit">Submit Application</button>
-</form>
+        <h2>Additional Information</h2>
+        <label for="additionalInfo">Please provide any additional information or comments:</label>
+        <textarea id="additionalInfo" name="additionalInfo"></textarea>
 
-<a href="/">Home</a>
+        <button type="submit">Submit Application</button>
+    </form>
+
+    <a href="/" class="btn btn-link">Home</a>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
