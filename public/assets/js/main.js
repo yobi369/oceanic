@@ -187,3 +187,19 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Update copyright year automatically
+    const yearElement = document.getElementById('currentYear');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+
+    // Add active state to current page in footer navigation
+    const currentPath = window.location.pathname;
+    document.querySelectorAll('.footer__link').forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('footer__link--active');
+        }
+    });
+});

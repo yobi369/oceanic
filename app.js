@@ -1,13 +1,16 @@
 const express = require('express');
 const path = require('path');
-
-const app = express();
-const PORT = process.env.PORT || 3000;
-
 const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware for parsing request bodies
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(session({ secret: 'your_secret_key', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
@@ -62,21 +65,60 @@ app.get('/', (req, res) => {
     res.render('index'); // Render the index.ejs file
 });
 
+app.get('/volunteer', (req, res) => {
+    res.render('volunteer'); // Ensure this file exists in the views directory
+});
+
+app.post('/send-message', (req, res) => {
+    const { name, email, message } = req.body;
+    console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
+    res.send('Message sent successfully!');
+});
+ 
+// About routes
 app.get('/about', (req, res) => {
     res.render('about');
+});
+
+app.get('/features', (req, res) => {
+    res.render('features');
+});
+
+app.get('/blog', (req, res) => {
+    res.render('blog');
+});
+
+// Company routes
+app.get('/team', (req, res) => {
+    res.render('team');
+});
+
+app.get('/donations', (req, res) => {
+    res.render('donations');
+});
+
+// Support routes
+app.get('/faqs', (req, res) => {
+    res.render('faqs');
+});
+
+app.get('/support', (req, res) => {
+    res.render('support');
 });
 
 app.get('/contact', (req, res) => {
     res.render('contact');
 });
 
-
-app.post('/send-message', (req, res) => {
-    const { name, email, message } = req.body;
-    // Here you can process the message, e.g., send an email or save to a database
-    console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
-    res.send('Message sent successfully!');
+// Legal routes
+app.get('/terms', (req, res) => {
+    res.render('terms');
 });
+
+app.get('/privacy', (req, res) => {
+    res.render('privacy');
+});
+
 
 // Start the server
 app.listen(PORT, () => {

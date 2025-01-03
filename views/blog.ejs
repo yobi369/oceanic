@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Kiwi Oceanic - Blog</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar Styles */
+        .nav-section {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            background-color: transparent;
+        }
+
+        .brand-logo {
+            margin-right: 20px;
+        }
+
+        .brand-logo img {
+            width: 110px;
+            height: 80px;
+        }
+
+        .nav-section ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .nav-section ul li {
+            margin: 0 20px;
+        }
+
+        .nav-section ul a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-section ul a:hover {
+            color: #ff6600;
+        }
+
+        /* Header Styles */
+        header {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        header h1 {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            color: white;
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        header p {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Blog Section */
+        .blog-card {
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Contact Icon */
+        .contact-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .btn-custom {
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .btn-custom:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="slider">
+        <div class="slides">
+            <img src="/assets/img/ocean-conservation.jpeg" alt="Ocean Conservation" class="slide" />
+        </div>
+        <div class="carousel-overlay">
+            <h1 style="color: white;">Welcome to Kiwi Oceanic Group</h1>
+            <p style="color: white;">Protecting the Pacific Ocean's Marine Ecosystems</p>
+        </div>
+    </header>
+    <nav class="nav-section navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/news">News & Blog</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/support">Support Center</a></li>
+            <li><a href="/team">Our Team</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Blog Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Latest Blog Posts</h2>
+            <div class="row">
+                <% ['blue-guardians.jpeg', 'ocean-heroes.jpeg', 'marine-conservation.jpeg', 'community-engagement.jpeg ', 'sustainable-practices.jpeg', 'ocean-cleanup.jpeg'].forEach(function(post, index) { %>
+                <!-- Blog Post -->
+                <div class="col-md-4 mb-4">
+                    <div class="card blog-card shadow">
+                        <img src="/assets/img/<%= post %>" class="card-img-top" alt="<%= post %>">
+                        <div class="card-body">
+                            <h5 class="card-title">Protecting Our Oceans: A Community Effort</h5>
+                            <span class="badge badge-primary">Conservation</span>
+                            <span class="d-block text-muted">Published: March 15, 2025 | Comments: 10</span>
+                            <p class="card-text">
+                                <% if (index === 0) { %>
+                                The Blue Guardians initiative focuses on empowering local communities to protect marine biodiversity through education and active participation in conservation efforts.
+                                <% } else if (index === 1) { %>
+                                Our Ocean Heroes program highlights individuals making significant contributions to marine conservation, showcasing their stories and inspiring others to take action.
+                                <% } else if (index === 2) { %>
+                                Marine conservation is crucial for maintaining the health of our oceans. This post discusses various strategies and practices that can help preserve marine ecosystems.
+                                <% } else if (index === 3) { %>
+                                Community engagement is vital for successful conservation efforts. Learn how we involve local populations in our projects to ensure sustainable practices.
+                                <% } else if (index === 4) { %>
+                                Sustainable practices in fishing and tourism are essential for protecting marine life. This article explores how we can balance economic growth with environmental stewardship.
+                                <% } else if (index === 5) { %>
+                                The Ocean Cleanup project aims to remove plastic waste from our seas. Discover how this innovative initiative is making a difference and how you can get involved.
+                                <% } %>
+                            </p>
+                            <a href="/assets/img/<%= post %>" class="btn btn-custom">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <section class="section-five">
+            <div class="container">
+                <div class="contact-top">
+                    <h3>CONTACT US</h3>
+                    <p>FOR ANY QUESTIONS OR COLLABORATIONS.</p>
+                </div>
+                <div class="contact-middle">
+                    <div>
+                        <span class="contact-icon">
+                            <i class="fas fa-map-signs"></i>
+                        </span>
+                        <span>Address</span>
+                        <p>123 Ocean Drive, Marine City, Pacific Ocean</p>
+                    </div>
+                    <div>
+                        <span class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </span>
+                        <span>Contact Number</span>
+                        <p>+123 456 7890</p>
+                    </div>
+                    <div>
+                        <span class="contact-icon">
+                            <i class="fas fa-paper-plane"></i>
+                        </span>
+                        <span>Email Address</span>
+                        <p>info@kiwioceanicgroup.org</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
